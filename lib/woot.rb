@@ -25,7 +25,9 @@ class Woot
       'div.writeUp'               => { :writeup => :text },
       'div.specs'                 => { :specs => :text },
       'div.productDescription>dl' => { :details => :text },
-      'a#ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_SaleControl_HyperLinkWantOne' => { :purchase_url => proc { |element| "http://#{subdomain}.#{DOMAIN}#{element.attributes['href']}" if element.attributes.has_key?('href') } }
+      'a#ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_SaleControl_HyperLinkWantOne' => { :purchase_url => proc do |element|
+        "http://#{subdomain}.#{DOMAIN}#{element.attributes['href'].gsub(/^https?:\/\/[^\/]+/, '')}" if element.attributes.has_key?('href')
+       end }
     }
   end
 end
