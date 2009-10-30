@@ -4,14 +4,14 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = 'shuber-woot'
+    gem.name = 'woot'
     gem.summary = 'Scapes woot.com sites'
     gem.description = 'Scapes woot.com sites'
     gem.email = 'shuber@huberry.com'
     gem.homepage = 'http://github.com/shuber/woot'
     gem.authors = ['Sean Huber']
     gem.add_dependency 'scrapi'
-    gem.add_development_dependency 'thoughtbot-shoulda'
+    gem.add_development_dependency 'shoulda'
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
 rescue LoadError
