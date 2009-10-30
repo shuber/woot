@@ -8,7 +8,15 @@ Scapes woot.com sites with ruby
 
 == Usage
 
-  coming soon...
+Simply call <tt>Woot.scrape</tt> and optionally specify the woot subdomain (e.g. www, shirt, kids, wine, etc).
+Defaults to www.
+
+  data = Woot.scrape
+  puts data.title
+  puts data.price
+  
+  data = Woot.scrape(:shirt)
+  puts data.title
 
 == Note on Patches/Pull Requests
  
@@ -20,6 +28,11 @@ Scapes woot.com sites with ruby
   (if you want to have your own version, that is fine but
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
+
+== Todo
+
+* sellout.woot.com support
+* tests
 
 == Copyright
 
