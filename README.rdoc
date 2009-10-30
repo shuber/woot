@@ -31,9 +31,10 @@ Defaults to www.
 
 == Todo
 
-* build gem
 * sellout.woot.com support
+* woot-off quantities
 * tests
+* build gem
 
 == Copyright
 
