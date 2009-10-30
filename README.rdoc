@@ -31,6 +31,7 @@ Defaults to www.
 
 == Todo
 
+* build gem
 * sellout.woot.com support
 * tests
 
