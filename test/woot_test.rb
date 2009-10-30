@@ -1,9 +1,5 @@
 require 'test_helper'
 
-def subdomains; [:www, :wine, :shirt, :kids]; end # TODO: sellout
-def possible_blanks; [:purchase_url]; end
-def attributes; Woot.selectors.map { |selector, results| results.keys }.flatten; end
-
 class WootTest < Test::Unit::TestCase
 
   subdomains.each do |subdomain|
@@ -15,7 +11,7 @@ class WootTest < Test::Unit::TestCase
           assert @woot.members.include?(attribute.to_s)
         end
         
-        unless possible_blanks.include?(attribute)
+        unless possible_blank_attributes.include?(attribute)
           should "have a value for #{attribute}" do
             assert !@woot.send(attribute).nil?
             assert !@woot.send(attribute).empty?
