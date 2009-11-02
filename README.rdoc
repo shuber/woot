@@ -1,6 +1,6 @@
 = woot
 
-Scapes woot.com sites with ruby
+Scrapes woot.com sites
 
 == Installation
 
