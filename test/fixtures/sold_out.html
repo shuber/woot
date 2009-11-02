@@ -1,0 +1,645 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head id="ctl00_ctl00_Head"><title>
+	Woot : One Day, One Deal (SM)
+</title>
+        <script type="text/javascript">document.write(unescape("%3Cscript src='" + document.location.protocol + "//ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));</script>
+        
+    
+<link rel="icon" href="http://gzip.static.woot.com/App_Themes/Woot/favicon.5.ico" type="image/x-icon" /><link rel="shortcut icon" href="http://gzip.static.woot.com/App_Themes/Woot/favicon.5.ico" type="image/x-icon" /><link rel="apple-touch-icon" href="http://gzip.static.woot.com/App_Themes/Woot/Images/apple-touch-icon.5.png" /><link rel='search' type='application/opensearchdescription+xml' title='Woot' href='/Search/OpenSearch.ashx' /><link href='http://gzip.static.woot.com/Styles/MasterPage.min.5034.css' rel='stylesheet' type='text/css' /><link href='Blog/Feed.ashx' rel='alternate' title='RSS' type='application/rss+xml' /><link rel="microsummary" type="application/x.microsummary+xml" href="DefaultMicrosummary.ashx" /><link rel="microsummary" type="application/x.microsummary+xml" href="DefaultReversedMicrosummary.ashx" /><link href='http://gzip.static.woot.com/Styles/HomePage.min.5034.css' rel='stylesheet' type='text/css' /><link href='http://gzip.static.woot.com/App_Themes/Woot/Styles/Theme.min.5034.css' rel='stylesheet' type='text/css' /></head>
+    <body id="ctl00_ctl00_Body" class="todaysWoot">
+        <div class="clearfix" id="header">
+            <h1>
+                <a href="./" class="logo">Woot : One Day, One Deal (SM)</a>
+                
+            </h1>
+            <script type="text/javascript">
+    function showLoginForm() {
+        $('#loginLink').hide();
+        $('#loginForm').show();
+        $('#username').focus();
+    }
+</script>
+<div id="login">
+    <noscript>
+        
+        
+            <h4>Welcome back!</h4>
+            <p><a href='https://sslwww.woot.com/Member/YourAccount.aspx'>My account</a> | <a href='https://account.woot.com/logout?returnurl=http%3a%2f%2fwww.woot.com%2fdefault.aspx'>Log out</a></p>
+        
+    </noscript>
+    <div id="loggedIn" style="display:none;">
+        <h4>Welcome <span class="username"></span><span class="qube"></span></h4>
+        <p><a href='https://sslwww.woot.com/Member/YourAccount.aspx'>My account</a> | <a href='https://account.woot.com/logout?returnurl=http%3a%2f%2fwww.woot.com%2fdefault.aspx'>Log out</a></p>
+    </div>
+    <div id="loggedOut" style="display:none;">
+        <div id="loginLink">
+            <h4><a href="https://account.woot.com/login?returnurl=http%3a%2f%2fwww.woot.com%2fdefault.aspx" onclick="showLoginForm(); return false;">Log in</a></h4>
+        </div>
+        <div id="loginForm" style="display:none;">
+            <form action='https://account.woot.com/login?returnurl=http%3a%2f%2fwww.woot.com%2fdefault.aspx' method="post">
+                <ul class="clearfix">
+                    <li>
+                        <input id="username" name="username" tabindex="1" type="text" />
+                        <span>username</span>
+                    </li>
+                    <li>
+                        <input name="password" tabindex="2" type="password" />
+                        <span>password <a href='https://sslwww.woot.com/User/ForgotPassword.aspx'>(forget?)</a></span>
+                    </li>
+                    <li id="loginSubmit">
+                        <input tabindex="3" type="submit" value="Go" />
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <p>Hi, are you new? <a href='https://sslwww.woot.com/User/Register.aspx'>Start here</a>.</p>
+    </div>
+</div>
+            
+<ul class="nav">
+    <li id="navTodaysWoot"><a href="/"><span>Today's Woot</span></a></li>
+    <li id="navBlog"><a href="/Blog/"><span>Blog</span></a></li>
+    <li id="navCommunity"><a href="/Forums/"><span>Community</span></a></li>
+    <li id="navWriteUs"><a href="/WriteUs.aspx"><span>Write Us</span></a></li>
+    <li id="navWhatIsWoot"><a href="/WhatIsWoot.aspx"><span>What Is Woot?</span></a></li>
+</ul>
+        </div>
+        <form name="aspnetForm" method="post" action="default.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDMwNzE3MDMwZGTHscstbp0E2jJMrd8uGXSlJpAbZw==" />
+</div>
+
+
+<script src="http://gzip.static.woot.com/Scripts/jquery.corner.min.5034.js" type="text/javascript"></script>
+<script src="http://gzip.static.woot.com/Scripts/jquery.simplemodal.min.5034.js" type="text/javascript"></script>
+<script src="http://gzip.static.woot.com/Scripts/MasterPage.min.5034.js" type="text/javascript"></script>
+<script src="http://gzip.static.woot.com/Scripts/jquery.qtip.min.5034.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+$(function() { $('.otherWootSite img').qtip(thumbnailQtipSettings); });//]]>
+</script>
+
+<script src="http://gzip.static.woot.com/Scripts/jquery.jscrollpane.min.5034.js" type="text/javascript"></script>
+<script src="http://gzip.static.woot.com/Scripts/jquery.mousewheel.min.5034.js" type="text/javascript"></script>
+<script src="http://partner.googleadservices.com/gampad/google_service.js" type="text/javascript"></script><script type="text/javascript">GS_googleAddAdSenseService('ca-pub-2332856072838068'); GS_googleEnableAllServices();</script><script type="text/javascript">GA_googleAddSlot('ca-pub-2332856072838068', 'woot-homeside1-300x250');</script><script type="text/javascript">GA_googleFetchAds();</script><script type="text/javascript">GA_googleAddSlot('ca-pub-2332856072838068', 'woot-homeside2-300x250');</script><script type="text/javascript">GA_googleAddSlot('ca-pub-2332856072838068', 'woot-homeside3-300x250');</script>
+            
+<p class="accessibility">Woot is the originator of One Day, One Deal. Every midnight (central) we launch an 
+event: one sale that lives until it sells out, or the next midnight.</p>
+            <div class="leadIn">
+                
+    
+    
+<div class="hproduct clearfix">
+	<a href="javascript:lightboxImage('http://sale.images.woot.com/iRobot_Roomba_530_Robotic_Vacuum_with_Virtual_WallyxlDetail.jpg');"><img alt="iRobot Roomba 530 Robotic Vacuum with Virtual Wall" class="photo" src="http://sale.images.woot.com/iRobot_Roomba_530_Robotic_Vacuum_with_Virtual_WalluquStandard.jpg" /></a>
+    <div class="productDescription">
+        
+    	<h2 class="fn">iRobot Roomba 530 Robotic Vacuum with Virtual Wall</h2>
+        <h3 class="price"><span class="money"><abbr class="currency" title="USD" lang="en">$</abbr><span class="amount">129.99</span></span></h3>
+        
+                <ul id="shippingOptions">
+            
+                <li>+ $5 shipping</li>
+            
+                </ul>
+            
+        
+        <a href='http://www.woot.com/sale/10244' class="url" style="display:none;"></a>
+        <dl>
+            
+        	<dt>Condition:</dt>
+            <dd>Refurbished</dd>
+            <dt>Product:</dt>
+            
+					<dd>
+					    1 iRobot Roomba 530 Robotic Vacuum with Virtual Wall and Self-Charging Home Base 
+						
+                    </dd>
+				    
+				
+        </dl>
+        <h5><a id="ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_SaleControl_HyperLinkWantOne" class="soldOut">I Want One!</a></h5>
+    </div>
+    <!-- Event Codes -->
+    
+    
+    
+</div>
+
+    <div id="ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_PanelSalebar" class="salebar">
+	
+<div class="module qualityPosts">
+    <div class="header">
+        <h3><a id="ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_ctl00_ctl00_HyperLinkDiscussion" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553042">Discussion on Today's Woot</a></h3>
+    </div>
+    <div class="content">
+        
+          
+                <p>shelby61 wants to know, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553921#3553921" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553921#3553921">"How does this model do with standard fringe at the ends of rugs?"</a></p>
+              
+                <p>ZigIsAwesome worries about <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553900#3553900" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553900#3553900">bar stools</a>.</p>
+              
+                <p>Aellus replies, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553843#3553843" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553843#3553843">"Yes, easily. My 530 climbs up into the bottom shelf of my TV stand every time it cleans the living room. Its about a full inch shelf height."</a></p>
+              
+                <p>noomehtrevo asks, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553804#3553804" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553804#3553804">"I live in an apartment and there is about a half-inch lip going from the den to the kitchen area. Will it make it up to that area?"</a></p>
+              
+                <p>rswoot555 opines, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553773#3553773" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553773#3553773">"if you have young children that leave their toys, etc. around the house the iRobot isn't for you."</a> Wootbot picks up first.</p>
+              
+                <p>bnedella says, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553758#3553758" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553758#3553758">"530 is loud enough you'll have to turn up the TV if it is in the same room, but not so much that it is unbearable. Solve the problem by vacuuming while away from home though."</a></p>
+              
+                <p>rfreed wants to know, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553680#3553680" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553680#3553680">"  Can you purchase additional virtual walls?"</a></p>
+              
+                <p>smaw0351 notes, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553545#3553545" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553545#3553545">"it works great on our hardwood floors. very rarely it would get stuck going over the a/c vents on the floor."</a></p>
+              
+                <p>cticindy may love <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553514#3553514" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553514#3553514">Roombas a little much</a>.</p>
+              
+                <p>psychodad1961 wonders, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553487#3553487" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553487#3553487">"Is this really a vacuum or does it just sweep the floor like my Swivel Sweeper...?"</a></p>
+              
+                <p>rfekecs thinks, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553470#3553470" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553470#3553470">"...it was worthless, a huge disappointment. Easier to just vacuum myself."</a></p>
+              
+                <p>gorbag says, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553403#3553403" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553403#3553403">"They're really great, but be aware that they do have to be cleaned after each run, and extracting hair..."</a></p>
+              
+                <p>Flagg looks into using them with <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553390#3553390" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553390#3553390">220V power</a>.</p>
+              
+                <p>Inuyasha inquires, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553382#3553382" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553382#3553382">"  do you know if the power supply is it ok for 220V?"</a></p>
+              
+                <p>Flagg responds, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553379#3553379" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553379#3553379">"I've had my Roomba run over pet barf and other accidents, and believe me, it's not good."</a></p>
+              
+                <p>ElevenBangBang worries about other <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553365#3553365" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553365#3553365">pet... issues</a>.</p>
+              
+                <p>scorpshockey thinks this is a <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553354#3553354" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553354#3553354"> very tempting price.</a></p>
+              
+                <p>mmiteshm checks out <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553265#3553265" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553265#3553265">coverage</a>.</p>
+              
+                <p>zephalis relates, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553241#3553241" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553241#3553241">"This model does fairly well at getting itself unstuck from carpet tassels and cords. It's strong enough to pick up a AA battery without me noticing."</a></p>
+              
+                <p>mmiteshm <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553236#3553236" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553236#3553236">hacks</a> Roombas.</p>
+              
+                <p>bnedella tries to cover some <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553212#3553212" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553212#3553212">frequently asked questions</a>.</p>
+              
+                <p>mmiteshm hurries off to <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553205#3553205" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553205#3553205">YouTube</a>.</p>
+              
+                <p>goldiemcg posts, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553202#3553202" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553202#3553202">"It works great on hardwoods and doesn't seem to have much of an issue with our rugs."</a></p>
+              
+                <p>esperath shares, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553184#3553184" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553184#3553184">"The Roomba does a great job of picking up cat fur and stray litter pellets from around the house."</a></p>
+              
+                <p>danib62 warns, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553158#3553158" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553158#3553158">"One caveat though is that it will not like dark colored rugs!"</a></p>
+              
+                <p>greatgerm found us some <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553155#3553155" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553155#3553155">reviews</a>.</p>
+              
+                <p>kmeltzer says, <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553115#3553115" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553115#3553115">"I bought one at this previous Wooting. Been very happy with it. I named it Roombie."</a></p>
+              
+                <p>LEM- checks out a <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553086#3553086" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553086#3553086">previous wooting</a>.</p>
+              
+                <p>DCno10 visits <a href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553055#3553055" rel="nofollow"  title="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553055#3553055">iRobot</a>.</p>
+            
+    </div>
+    <div class="footer">
+        <ul class="clearfix">
+            <li class="discuss"><a id="ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_ctl00_ctl00_HyperLinkAllDiscussion" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553042">Join This Discussion</a></li>
+            <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_ctl00_ctl00_HyperLinkCommentCount" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553042">209 comments</a></li>
+        </ul>
+    </div>
+</div>
+
+</div>
+
+
+            </div>
+            <div class="contentWrapper">
+                <div class="contentContainer clearfix">
+                    <div class="arrow"></div>
+                    <div class="mainContent clearfix">
+                        
+    
+    <div class="story">
+        <h2>Looking For Mr. Roombar</h2>
+        <h3>This is nice, isn’t it? I have to say, I was surprised when you called me. Most people who date robots prefer the kind that, you know, look like people.</h3>
+        <div class="writeUp"><p>I just keep thinking about all those times you came over to play cards with Len and Sherry. Of course I noticed you, but I never imagined you noticed me, way down on the floor in my self-charging home base. Well, there was this one time when I heard you ask Sherry about me. It made my heart leap. But then Sherry just started talking about how convenient I was, and how my counter-rotating Bristle Brush and Beater Brush work together like a broom and dustpan to lift hair, dust, and debris out of carpet. I just assumed you were interested in my cleaning abilities, not me personally. Glad I was wrong!</p>
+<p>Wow, everything on the menu looks so good. I’d heard about this place, but it’s even nicer than I imagined. Well, except for the floors. It’s like they think they can slap down a brown carpet and forget about ever vacuuming again. Well, they can’t fool me and my Dirt Detect capability. Like that smear of, like, dried holladaise sauce or whatever it is, over by that booth. See, if it was up to me, I’d really bear down with my Spot Clean mode, and I’d have that crud lifted up before you could say “new, improved filter”. See, that’s the difference between me and a regular old-</p>
+<p>Listen to me. Talking shop in the middle of a lovely first date. Sorry. I just don’t get out much.</p>
+<p>So, uh, have you seen any interesting movies lately? I haven’t. I’ve actually never seen a movie in a theater. Every time I try, I see all that popcorn and all those crumbs all over the floor, and I just can’t resist getting down there and sweeping it all up. Well, you can imagine the noise. I’m loud, I know. What can I say? I grew up in a loud family. You get us together, it’s <span class="caps">VRRRR</span>-VRRRR-VRRRR the whole time.</p>
+<p>What? Go back to your place? Sure. Yeah, that would be fun. I’m not that hungry anyway. Um, yes, I did bring my Virtual Wall. Yeah, I emptied my Debris Bin right before you picked me up. Why do you ask?</p>
+<p>Oh. Oh, I see. So it’s like that. I guess I should’ve known.</p></div>
+        <div class="specs">
+            
+            <strong>Authorized for <a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=5728">SquareTrade</a> Extended Warranty</strong><br><br><script type="text/javascript" src="http://static.woot.com/Scripts/quoteWidget-custom.min.3588.js"></script><span id="squaretradewidget"></span><script type="text/javascript">$(document).ready(function() {st_widget.create({itemCondition:'Refurbished',itemDescription:'iRobot Roomba 530 Robotic Vacuum with Virtual Wall',itemPrice:'129.99',bannerStyle:'wide',widgetType:'quote',merchantID:'subscrip_014793207843'}); });</script><br/><br/>
+<p><strong>Warranty:</strong> 90 Day iRobot</p>
+<p><strong>Features:</strong></p>
+<ul>
+    <li>Efficiently vacuums dirt, debris, pet hair, dust, allergens and more from carpets and hard floors</li>
+    <li>Counter rotating Bristle Brush and Beater Brush work together like a dustpan and broom</li>
+    <li>Sturdy Bristle Brush digs deep into carpet fibers to grab dirt, debris, pet hair and more</li>
+    <li>Powerful vacuum sucks large and small debris into the large, bag-less bin</li>
+    <li>Fine filter traps dust, pollen and tiny particulate inside the bin</li>
+    <li>Cleans the whole floor, under and around furniture, into corners and along wall edges</li>
+    <li>Detects dirtier areas and spends more time cleaning them</li>
+    <li>Spot Clean provides quick clean-up of spills and concentrated messes</li>
+    <li>Automatically senses and avoids stairs and other drop-offs</li>
+    <li>Simple operation—just press the Clean button and Roomba does the rest</li>
+    <li>Automatically returns to its self-charging Home Base® to dock and recharge between cleanings</li>
+    <li>Faster counter-rotating brushes with improved design pick up more hair and debris and are easier to remove and clean</li>
+    <li>Improved filter captures more dust and allergens while a larger bin holds more debris</li>
+    <li>Improved anti-tangle technology keeps Roomba from getting stuck on cords, carpet fringe and tassels</li>
+    <li>Improved sidebrush makes Roomba even more efficient at cleaning edges and corners</li>
+</ul>
+<p><strong>Additional Photo:</strong></p>
+<ul>
+    <li><a href="javascript:lightboxImage('http://sale.images.woot.com/HG77034C_Specs2.jpg');">Underbelly</a></li>
+    <li><a href="javascript:lightboxImage('http://sale.images.woot.com/HG77034C_specs3.jpg');">In Home Base with Virtual Wall</a></li>
+    <li><a href="javascript:lightboxImage('http://sale.images.woot.com/HG77034C_specs4.jpg');">Virtual Wall</a></li>
+</ul>
+<p><strong>In the box:</strong></p>
+<ul>
+    <li>1 iRobot Roomba 530</li>
+    <li>1 Virtual Wall&#160;</li>
+    <li>1 Self-charging Home Base</li>
+    <li>1 Power Supply (3 hour charge time)</li>
+    <li>1 Rechargeable Battery</li>
+    <li>1 Filter </li>
+</ul>
+<p>&#160;</p>
+        </div>
+        <div class="rider"></div>
+    </div>
+    <div id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_PanelInnerbar" class="innerbar">
+	<div id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl00_PanelAdvertisement" class="module advertisement">
+		
+    <div class="content">
+        <script type="text/javascript">GA_googleFillSlot('woot-homeside1-300x250');</script>
+    </div>
+    <div class="footer">
+        <p><a href="SponsorUs.aspx">Advertisement</a></p>
+    </div>
+
+	</div>
+<div id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl01_PanelWootcast" class="module wootcast haudio hmedia">
+		
+    <div class="header">
+        <h3><a id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl01_HyperLinkYourDailyWootcast" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553045">Today's Wootcast</a></h3>
+        <h4><a href="Blog/Feed.ashx?cat=Woot">RSS Feed</a></h4>
+    </div>
+    <div class="content">
+        <ul class="clearfix">
+            <li class="playButton">
+                
+<!-- object, two implementations nested + IE conditional comments: http://www.swffix.org/testsuite/ -->
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" height="31" width="56">
+    <param name="movie" value="http://gzip.static.woot.com/Flash/SoundPlayer.swf?url=http://files.woot.com/20091101-qaz2qs.mp3" />
+    <param name="bgcolor" value="#91AB62" />
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="http://gzip.static.woot.com/Flash/SoundPlayer.swf?url=http://files.woot.com/20091101-qaz2qs.mp3" height="31" width="56">
+        <param name="bgcolor" value="#91AB62" />
+    <!--<![endif]-->
+        <a href="http://files.woot.com/20091101-qaz2qs.mp3">Play</a>
+    <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+</object>
+            </li>
+            <li class="title fn">
+                <a id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl01_HyperLinkTitle" rel="enclosure" type="audio/mpeg" href="http://files.woot.com/20091101-qaz2qs.mp3">Today in History</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer">
+        <ul class="clearfix">
+            <li class="discuss"><a id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl01_HyperLinkDiscuss" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553045">Discuss This Wootcast</a></li>
+            <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl01_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553045">6 comments</a></li>
+        </ul>
+    </div>
+
+	</div>
+
+<script type="text/javascript">
+    function showFullSaleStats()
+    {
+        // Only load sale stats one time per page load
+        if (jQuery('#fullSaleStats')[0].innerHTML.length == 0)
+        {
+            jQuery('#fullSaleStats').load('/SaleStats.aspx?wootsaleid=10244 #saleStats', null, function() { lightboxElement('fullSaleStats'); });
+        }
+        else
+        {
+            lightboxElement('fullSaleStats');
+        }
+    }
+</script>
+<div id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl02_PanelSaleStats" class="module saleStats">
+		
+    <div class="header">
+        <h3><a href="javascript:showFullSaleStats();">Sale Stats Snapshot</a></h3>
+        <h4><a href="javascript:showFullSaleStats();">Full Stats</a></h4>
+    </div>
+    <div class="content">
+        <dl class="singleStats clearfix">
+            
+                <dt>Speed to First Woot:</dt>
+    	        <dd>6m 19.830s</dd>
+    	    
+            
+                <dt>First Sucker:</dt>
+    	        <dd>lasombra25</dd>
+            
+    	    
+    	        <dt>Sellout Time:</dt>
+    	        <dd>4:05:16 PM Central Time</dd>
+    	    
+    	    
+    	        <dt>Item quantity:</dt>
+    	        <dd>4999</dd>
+    	    
+        </dl>
+        <h4>Quantity Breakdown</h4>
+        <ul class="horizontalBarChart">
+            <li><span class="value">90% bought 1</span><span class="bar" style="width:90%">90%</span></li>
+            <li><span class="value">5% bought 2</span><span class="bar" style="width:5%">5%</span></li>
+            <li><span class="value">4% bought 3</span><span class="bar" style="width:4%">4%</span></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <p><a href="javascript:showFullSaleStats();">Full Stats &rarr;</a></p>
+    </div>
+
+	</div>
+<div class="statsBoxOuter" id="fullSaleStats"></div>
+
+<div id="ctl00_ctl00_ContentPlaceHolderMainContent_ContentPlaceHolderMainContent_ctl02_ctl03_PanelAdvertisement" class="module advertisement">
+		
+    <div class="content">
+        <script type="text/javascript">GA_googleFillSlot('woot-homeside2-300x250');</script>
+    </div>
+    <div class="footer">
+        <p><a href="SponsorUs.aspx">Advertisement</a></p>
+    </div>
+
+	</div>
+</div>
+    <p class="backToTop"><a href="#header">Back to top</a></p>
+
+
+                    </div>
+                    <div class="sidebar">
+                        
+    
+    
+<script type="text/javascript">
+    // Google Analytics variables 
+    var serverHour = 17;
+    var isWootOff = false;
+</script>
+
+<div class="module onOtherWoots">
+    <div class="content">
+        <div class="otherWootSite firstWoot">
+            <h3><a class="kids" href="http://kids.woot.com">Kids.Woot</a></h3>
+            <a href="http://kids.woot.com"><img alt="Matchbox Power Scouts Adventure System" src="http://sale.images.woot.com/Matchbox_Power_Scouts_Adventure_System07qThumbnail.jpg" /></a>
+        </div>
+        <div class="otherWootSite lastWoot">
+            <h3><a class="shirt" href="http://shirt.woot.com">Shirt.Woot</a></h3>
+            <a href="http://shirt.woot.com"><img alt="Big On The Inside" src="http://sale.images.woot.com/Big_On_The_InsidexrmThumbnail.png" /></a>
+        </div>
+    </div>
+</div>
+
+<div class="module onOtherWoots">
+    <div class="content">
+        <div class="otherWootSite firstWoot">
+            <h3><a class="sellout" href="http://sellout.woot.com">Sellout.Woot</a></h3>
+            <a href="http://sellout.woot.com"><img alt="Garrity Rechargeable LED Flashlight" src="http://sale.images.woot.com/Garrity_Rechargeable_LED_Flashlight8prThumbnail.jpg" /></a>
+        </div>
+        <div class="otherWootSite lastWoot">
+            <h3><a class="wine" href="http://wine.woot.com">Wine.Woot</a></h3>
+            <a href="http://wine.woot.com"><img alt="St. Supery Vineyards &#201;lu  - 375ml - Three Pack" src="http://sale.images.woot.com/St._Supery_Vineyards_Élu__-_3_Pack3vyThumbnail.jpg" /></a>
+        </div>
+    </div>
+</div>
+
+<div class="module sideDeal">
+    <div class="header">
+        <h3><a href="SponsorUs.aspx" id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl02_SideDealLink">Today's Side Deal</a></h3>
+    </div>
+    <div class="content">
+        <p><p>Woot Exclusive – I-Inc 25” LCD Monitor 1080p $179.97 with Free Shipping @ <a href="http://www.woot.com/3le.r?url=http%3a%2f%2fwww.tigerdirect.com%2fapplications%2fcampaigns%2fcampaigntemplate.asp%3fCampaignID%3d28%26SRCCODE%3dWOOT0107%26cm_mmc_o%3d8BBfCjC-KeCjC-KeCjC-Ke">TigerDirect</a></p></p>
+    </div>
+    <div class="footer">
+        <ul class="clearfix">
+            <li class="discuss"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl02_HyperLinkDiscuss" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553043">Discuss This Side Deal</a></li>
+            <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl02_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3553043">1 comment</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="module blog">
+    <div class="header">
+        <h3><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_HyperLinkHeader" href="Blog/">Woot Blog</a></h3>
+        <h4><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_HyperLinkFeed" href="Blog/Feed.ashx">RSS Feed</a></h4>
+    </div>
+  	<div class="content">
+  	    
+                <ul class="clearfix firstPost">
+    	            <li class="date">Today</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9846">Of Course, If You WANT To Pay Us To Hype You…</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl00_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3554057">1 comment</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 30</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9829">Wootcasts from the Past: All Hallow’s Eve Edition</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl01_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3549210">3 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 29</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9823">The Monster Mashup: Great Halloween Hits</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl02_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3547872">8 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 29</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9821">Flash In The Brainpan: Red Remover</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl03_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3547803">7 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 28</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9729">Real Actual Field Tests #3: Superman Inflato-Suit</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl04_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3537168">20 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 26</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9585">10 Hot Rumors About Tomorrow's Ares Rocket Test Launch</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl05_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3525409">12 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 22</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9565">Wootcasts from the Past: Magellan Like a Felon Edition</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl06_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3518491">5 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 22</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9563">Windows 7 FAQ Or...Something Else?</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl07_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3518355">11 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 21</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9557">Dancers Must Be At Least Ten Hours Old: Woot Weads The Wire</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl08_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3517243">1 comment</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 21</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9556">14 Amazing New Mac Features That Apple Forgot To Mention</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_RepeaterNews_ctl09_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3516836">23 comments</a></li>
+                </ul>
+		    
+  	</div>
+    <div class="footer">
+        <p><a href="Blog/" id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl04_SeeAllLink">See All &rarr;</a></p>
+    </div>
+</div>
+<div id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl05_PanelAdvertisement" class="module advertisement">
+	
+    <div class="content">
+        <script type="text/javascript">GA_googleFillSlot('woot-homeside3-300x250');</script>
+    </div>
+    <div class="footer">
+        <p><a href="SponsorUs.aspx">Advertisement</a></p>
+    </div>
+
+</div>
+
+<div class="module blog">
+    <div class="header">
+        <h3><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl06_HyperLinkHeader" href="Blog/?cat=Contest">Woot Contests</a></h3>
+        <h4><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl06_HyperLinkFeed" href="Blog/Feed.ashx?cat=Contest">RSS Feed</a></h4>
+    </div>
+  	<div class="content">
+  	    
+                <ul class="clearfix firstPost">
+    	            <li class="date">Oct 28</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9655">Winners' Gallery: the Best of Contest 232</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl06_RepeaterNews_ctl00_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3536801">10 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 27</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9654">Winners' Gallery: the Best of Contest 231</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl06_RepeaterNews_ctl01_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3529204">19 comments</a></li>
+                </ul>
+		    
+                <ul class="clearfix ">
+    	            <li class="date">Oct 19</li>
+      	            <li class="title"><a href="http://www.woot.com/Blog/ViewEntry.aspx?Id=9544">Woot Contest 237: Deflating The Conspiracy</a></li>
+                    <li class="comments"><a id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl06_RepeaterNews_ctl02_HyperLinkComments" href="http://www.woot.com/Forums/ViewPost.aspx?PostID=3513628">53 comments</a></li>
+                </ul>
+		    
+  	</div>
+    <div class="footer">
+        <p><a href="Blog/" id="ctl00_ctl00_ContentPlaceHolderSidebar_ContentPlaceHolderSidebar_ctl00_ctl06_SeeAllLink">See All &rarr;</a></p>
+    </div>
+</div>
+
+
+
+                    </div>
+                </div>
+                <div id="footerWrapper">
+                    <div id="footer">
+                        
+    
+<div id="ctl00_ctl00_ContentPlaceHolderFooter_ContentPlaceHolderFooter_ctl00_PanelFooterAdditionalNav">
+	
+    <div class="footerSeparator"></div>
+    <div class="linkFooter">
+        <div class="mumbo">
+            <h5><a href="/Terms.aspx">Mumbo Jumbo</a></h5>
+            <p>
+                Product narratives are for entertainment purposes and frequently employ <a href="http://en.wikipedia.org/wiki/Point_of_view_(literature)">literary point of view</a>; the narratives do not express Woot's editorial opinion.
+                Aside from literary abuse, your use of this site also subjects you to Woot's <a href="/Terms.aspx">terms of use</a> and <a href="/User/PrivacyNotice.aspx">privacy policy</a>.
+            </p>
+            <p>Woot logos, site design, &amp; content &copy; Woot, Inc. 2004-2009. All Rights Reserved.</p>
+        </div>
+        <div class="linkCol footerGutter">
+            <h5><a href="/">Woot</a></h5>
+            <ul>
+                <li><a href="/">Today's Woot</a></li>
+                <li><a href="/Blog/">Blog</a></li>
+                <li><a href="/Forums/">Community</a></li>
+                <li><a href="/WriteUs.aspx">Write Us</a></li>
+                <li><a href="/WhatIsWoot.aspx">What is Woot?</a></li>
+            </ul>
+        </div>
+        <div class="linkCol">
+            <h5><a href="/Blog/">Blog</a></h5>
+            <ul>
+                <li><a href="/Blog/?cat=Woot">Woot</a></li>
+                <li><a href="/Blog/?cat=News">News</a></li>
+                <li><a href="/Blog/?cat=Contest">Contest</a></li>
+                <li><a href="/Blog/?cat=Laffs">Laffs</a></li>
+                <li><a href="/Blog/?cat=Miscellanea">Miscellanea</a></li>
+            </ul>
+        </div>
+        <div class="linkCol">
+            <h5><a href="/Forums/">Community</a></h5>
+            <ul>
+                <li><a href="/Forums/">Woots</a></li>
+                <li><a href="/Forums/ViewForum.aspx?ForumID=15">World of Woot</a></li>
+                <li><a href="/Forums/ViewForum.aspx?ForumID=16">Contests</a></li>
+                <li><a href="/Forums/ViewForum.aspx?ForumID=21">Woot Side Deals</a></li>
+                <li><a href="/Forums/ViewForum.aspx?ForumID=17">Everything But Woot</a></li>
+            </ul>
+        </div>
+        <div class="linkCol">
+            <h5><a href="/WhatIsWoot.aspx">What Is Woot?</a></h5>
+            <ul>
+                <li><a href="/WhatIsWoot.aspx">Woot FAQ</a></li>
+                <li><a href="/SponsorUs.aspx">Be a Woot Sponsor</a></li>
+                <li><a href="/Jobs.aspx">Work for Woot</a></li>
+                <li><a href="/Recalls.aspx">Product Recall Notices</a></li>
+                <li><a href="/Terms.aspx">Terms and Conditions</a></li>
+                <li><a href="/User/PrivacyNotice.aspx">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--[if IE 6]>
+            <script type="text/javascript" src="http://gzip.static.woot.com/Scripts/mtjs_iepnghandler_solo.min.5034.js"></script>
+            <script type="text/javascript">$(document).ready(function() { mtjs_iepnghandler_solo.go(); });</script>
+        <![endif]-->
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            var pageTracker = _gat._getTracker('UA-31798-1');
+            pageTracker._initData();
+            pageTracker._trackPageview('%2fdefault.aspx');
+        </script>
+        <!-- Start Quantcast tag -->
+        <script type="text/javascript">
+            _qoptions = { qacct: "p-45WWkjSYwI3II" };
+        </script>
+        <script type="text/javascript">
+            var quantcastHost = (("https:" == document.location.protocol) ? "https://secure." : "http://edge.");
+            document.write(unescape("%3Cscript src='" + quantcastHost + "quantserve.com/quant.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <noscript>
+            <img src="https://secure.quantserve.com/pixel/p-45WWkjSYwI3II.gif" style="display:none;" border="0" height="1" width="1" alt="Quantcast" />
+        </noscript>
+        <!-- End Quantcast tag -->
+    </body>
+</html>
