@@ -1,11 +1,21 @@
 class Woot
   DOMAIN = 'woot.com'
+  WOOT_OFF = 'woot-off'
+  TWITTER_IDS = {
+    'kids'    => 66527200,
+    'shirt'   => 7696162,
+    'sellout' => 15458304,
+    'wine'    => 1647621,
+    'www'     => 734493,
+    WOOT_OFF  => 20557892
+  }
+  SUBDOMAINS = TWITTER_IDS.keys - [WOOT_OFF]
   
   def self.scrape(subdomain = :www)
     selectors = self.selectors(subdomain)
     Scraper.define do
       result *(selectors.inject([]) do |array, (pattern, results)|
-        process pattern, results
+        process_first pattern, results
         array += results.keys
       end)
     end.scrape(URI.parse("http://#{subdomain}.#{DOMAIN}/"))
@@ -13,6 +23,7 @@ class Woot
   
   def self.selectors(subdomain = :www)
     @selectors = {
+      '*'                         => { :subdomain => proc { |element| subdomain.to_s } },
       'h2.fn'                     => { :title => :text },
       'span.amount'               => { :price => :text },
       'ul#shippingOptions'        => { :shipping => :text },
@@ -29,5 +40,19 @@ class Woot
         "http://#{subdomain}.#{DOMAIN}#{element.attributes['href'].gsub(/^https?:\/\/[^\/]+/, '')}" if element.attributes.has_key?('href')
        end }
     }
+  end
+  
+  def self.stream(twitter_username, twitter_password)
+    TweetStream::Client.new(twitter_username, twitter_password).follow(*TWITTER_IDS.values) do |status|
+      subdomain = TWITTER_IDS.index(status.user.id)
+      unless subdomain.nil?
+        subdomain = status.text.match(/https?:\/\/([^\.]+)\.#{DOMAIN}/).captures.first if subdomain == WOOT_OFF
+        yield Woot.scrape(subdomain)
+      end
+    end
+  end
+  
+  def self.stop
+    TweetStream::Client.stop
   end
 end

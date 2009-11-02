@@ -11,12 +11,21 @@ Scapes woot.com sites with ruby
 Simply call <tt>Woot.scrape</tt> and optionally specify the woot subdomain (e.g. www, shirt, kids, wine, etc).
 Defaults to www.
 
-  data = Woot.scrape
-  puts data.title
-  puts data.price
+  woot = Woot.scrape
+  puts woot.title
+  puts woot.price
   
   data = Woot.scrape(:shirt)
-  puts data.title
+  puts woot.title
+
+You can also receive live Woot updates using "Twitter's Streaming API"[http://apiwiki.twitter.com/Streaming-API-Documentation].
+Simply call <tt>Woot.stream</tt> with your Twitter username, password, and a block.
+
+  Woot.stream('your-twitter-username', 'your-twitter-password') do |woot|
+    puts "#{woot.subdomain}: #{woot.title}"
+  end
+
+Call <tt>Woot.stop</tt> to stop streaming.
 
 == Note on Patches/Pull Requests
  
@@ -32,8 +41,7 @@ Defaults to www.
 == Todo
 
 * sellout.woot.com support
-* woot-off quantities
-* build gem
+* parsing and streaming tests
 
 == Copyright
 
