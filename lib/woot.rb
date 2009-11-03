@@ -1,3 +1,6 @@
+require 'scrapi'
+require 'tweetstream'
+
 class Woot
   DOMAIN = 'woot.com'
   WOOT_OFF = 'woot-off'
@@ -13,7 +16,7 @@ class Woot
   
   def self.scrape(subdomain = :www)
     selectors = self.selectors(subdomain)
-    ::Scraper.define do
+    Scraper.define do
       result *(selectors.inject([]) do |array, (pattern, results)|
         process_first pattern, results
         array += results.keys
@@ -43,14 +46,14 @@ class Woot
   end
   
   def self.stream(twitter_username, twitter_password)
-    ::TweetStream::Client.new(twitter_username, twitter_password).follow(*TWITTER_IDS.values) do |status|
+    TweetStream::Client.new(twitter_username, twitter_password).follow(*TWITTER_IDS.values) do |status|
       subdomain = TWITTER_IDS.index(status.user.id)
       subdomain = $1 if subdomain == WOOT_OFF && subdomain =~ /https?:\/\/([^\.]+)\.#{DOMAIN}/
-      yield Woot.scrape(subdomain) unless subdomain.nil?
+      yield scrape(subdomain) unless subdomain.nil?
     end
   end
   
   def self.stop
-    ::TweetStream::Client.stop
+    TweetStream::Client.stop
   end
 end
