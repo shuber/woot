@@ -23,4 +23,8 @@ class Test::Unit::TestCase
     @subdomains ||= [:www, :wine, :shirt, :kids] # TODO: sellout
   end
   
+  def self.woots
+    @woots ||= subdomains.inject({}) { |hash, subdomain| hash.merge! subdomain => Woot.scrape(subdomain) }
+  end
+  
 end
