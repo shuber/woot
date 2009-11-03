@@ -47,7 +47,7 @@ class Woot
       'a.url'                     => { :url => '@href' },
       'li.comments>a'             => { :comments_url => '@href', :comments_count => proc { |element| element.children[0].content.gsub(/\D/, '') } },
       'div.story>h2'              => { :header => :text },
-      'div.story>h3'              => { :sub_header => :text },
+      'div.story>h3'              => { :subheader => :text },
       'div.writeUp'               => { :writeup => :text },
       'div.specs'                 => { :specs => :text },
       'div.productDescription>dl' => { :details => :text },
