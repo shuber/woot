@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{woot}
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sean Huber"]
-  s.date = %q{2009-11-02}
+  s.date = %q{2009-11-03}
   s.description = %q{Scapes woot.com sites}
   s.email = %q{shuber@huberry.com}
   s.extra_rdoc_files = [
@@ -21,9 +21,9 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
-     "init.rb",
      "lib/woot.rb",
-     "test/fixtures/sold_out.html",
+     "test/fixtures/available.html",
+     "test/fixtures/soldout.html",
      "test/test_helper.rb",
      "test/woot_test.rb",
      "woot.gemspec"
@@ -45,15 +45,18 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<scrapi>, [">= 0"])
       s.add_runtime_dependency(%q<tweetstream>, [">= 0"])
+      s.add_development_dependency(%q<fakeweb>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
     else
       s.add_dependency(%q<scrapi>, [">= 0"])
       s.add_dependency(%q<tweetstream>, [">= 0"])
+      s.add_dependency(%q<fakeweb>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
     end
   else
     s.add_dependency(%q<scrapi>, [">= 0"])
     s.add_dependency(%q<tweetstream>, [">= 0"])
+    s.add_dependency(%q<fakeweb>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
   end
 end
