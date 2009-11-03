@@ -1,4 +1,3 @@
-require 'httparty'
 require 'scrapi'
 require 'tweetstream'
 
@@ -24,9 +23,9 @@ class Woot
       url = Scraper.define do
         process_first "div.bd>div.img>a", :url => '@href'
         result :url
-      end.scrape(HTTParty.get("http://#{SELLOUT_DOMAIN}/").to_s).gsub('&amp;', '&')
+      end.scrape(Net::HTTP.get(SELLOUT_DOMAIN, '/')).gsub('&amp;', '&')
     end
-    response = HTTParty.get(url).to_s
+    response = Net::HTTP.get(URI.parse(url))
     
     selectors = self.selectors(subdomain)
     Scraper.define do

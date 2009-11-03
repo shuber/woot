@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{woot}
-  s.version = "0.0.5"
+  s.version = "0.0.6"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sean Huber"]
@@ -43,18 +43,15 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<httparty>, [">= 0"])
       s.add_runtime_dependency(%q<scrapi>, [">= 0"])
       s.add_runtime_dependency(%q<tweetstream>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
     else
-      s.add_dependency(%q<httparty>, [">= 0"])
       s.add_dependency(%q<scrapi>, [">= 0"])
       s.add_dependency(%q<tweetstream>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
     end
   else
-    s.add_dependency(%q<httparty>, [">= 0"])
     s.add_dependency(%q<scrapi>, [">= 0"])
     s.add_dependency(%q<tweetstream>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
