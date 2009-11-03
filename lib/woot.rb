@@ -1,6 +1,8 @@
 require 'scrapi'
 require 'tweetstream'
 
+Tidy.path = ENV['TIDY_PATH'] if ENV['TIDY_PATH']
+
 class Woot
   DOMAIN = 'woot.com'
   WOOT_OFF = 'woot-off'
