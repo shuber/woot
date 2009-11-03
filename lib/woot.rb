@@ -41,6 +41,7 @@ class Woot
       '*'                         => { :subdomain => proc { |element| subdomain.to_s } },
       'h2.fn'                     => { :title => :text },
       'span.amount'               => { :price => :text },
+      'abbr.currency'             => { :currency => '@title', :currency_symbol => :text },
       'ul#shippingOptions'        => { :shipping => :text },
       'img.photo'                 => { :image => '@src' },
       'div.hproduct>a'            => { :alternate_image => proc { |element| $1 if element.attributes['href'] =~ /\('([^']+)'\);/ } },
