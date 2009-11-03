@@ -1,3 +1,4 @@
+require 'httparty'
 require 'scrapi'
 require 'tweetstream'
 
@@ -5,6 +6,7 @@ Tidy.path = ENV['TIDY_PATH'] if ENV['TIDY_PATH']
 
 class Woot
   DOMAIN = 'woot.com'
+  SELLOUT_DOMAIN = 'shopping.yahoo.com'
   WOOT_OFF = 'woot-off'
   TWITTER_IDS = {
     'kids'    => 66527200,
@@ -17,13 +19,22 @@ class Woot
   SUBDOMAINS = TWITTER_IDS.keys - [WOOT_OFF]
   
   def self.scrape(subdomain = :www)
+    url = "http://#{subdomain}.#{DOMAIN}/"
+    if subdomain.to_s == 'sellout'
+      url = Scraper.define do
+        process_first "div.bd>div.img>a", :url => '@href'
+        result :url
+      end.scrape(HTTParty.get("http://#{SELLOUT_DOMAIN}/").to_s).gsub('&amp;', '&')
+    end
+    response = HTTParty.get(url).to_s
+    
     selectors = self.selectors(subdomain)
     Scraper.define do
       result *(selectors.inject([]) do |array, (pattern, results)|
         process_first pattern, results
         array += results.keys
       end)
-    end.scrape(URI.parse("http://#{subdomain}.#{DOMAIN}/"))
+    end.scrape(response)
   end
   
   def self.selectors(subdomain = :www)

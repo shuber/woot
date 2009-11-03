@@ -40,7 +40,6 @@ Call <tt>Woot.stop</tt> to stop streaming.
 
 == Todo
 
-* sellout.woot.com support
 * parsing and streaming tests
 
 == Copyright

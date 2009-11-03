@@ -10,6 +10,7 @@ begin
     gem.email = 'shuber@huberry.com'
     gem.homepage = 'http://github.com/shuber/woot'
     gem.authors = ['Sean Huber']
+    gem.add_dependency 'httparty'
     gem.add_dependency 'scrapi'
     gem.add_dependency 'tweetstream'
     gem.add_development_dependency 'shoulda'

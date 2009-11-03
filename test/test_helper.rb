@@ -16,12 +16,8 @@ class Test::Unit::TestCase
     @possible_blank_attributes ||= [:purchase_url]
   end
   
-  def self.subdomains 
-    @subdomains ||= [:www, :wine, :shirt, :kids] # TODO: sellout
-  end
-  
   def self.woots
-    @woots ||= subdomains.inject({}) { |hash, subdomain| hash.merge! subdomain => Woot.scrape(subdomain) }
+    @woots ||= Woot::SUBDOMAINS.inject({}) { |hash, subdomain| hash.merge! subdomain => Woot.scrape(subdomain) }
   end
   
 end
