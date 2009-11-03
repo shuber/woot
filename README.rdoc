@@ -9,7 +9,7 @@ Scrapes woot.com sites
 == Usage
 
 Simply call <tt>Woot.scrape</tt> and optionally specify the woot subdomain (e.g. www, shirt, kids, wine, etc).
-Defaults to www.
+Defaults to www. Returns a Struct object.
 
   woot = Woot.scrape
   puts woot.title
@@ -37,10 +37,6 @@ Call <tt>Woot.stop</tt> to stop streaming.
   (if you want to have your own version, that is fine but
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
-
-== Todo
-
-* parsing and streaming tests
 
 == Copyright
 
