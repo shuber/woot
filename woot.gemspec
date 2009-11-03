@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{woot}
-  s.version = "0.0.1"
+  s.version = "0.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sean Huber"]
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "VERSION",
      "init.rb",
      "lib/woot.rb",
+     "test/fixtures/sold_out.html",
      "test/test_helper.rb",
      "test/woot_test.rb",
      "woot.gemspec"
