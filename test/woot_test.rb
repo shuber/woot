@@ -48,7 +48,7 @@ class WootTest < Test::Unit::TestCase
       assert_equal 'shirt', Woot.send(:subdomain_from_twitter_status, MockTwitterStatus.new(Woot::TWITTER_IDS[Woot::WOOT_OFF], "blah blah blah shirt.#{Woot::DOMAIN} blah blah"))
     end
     
-    should 'return nil if the status comes from the woo-off user without a woot url in it' do
+    should 'return nil if the status comes from the woot-off user without a woot url in it' do
       assert_nil Woot.send(:subdomain_from_twitter_status, MockTwitterStatus.new(Woot::TWITTER_IDS[Woot::WOOT_OFF], 'blah blah blah'))
     end
   end
