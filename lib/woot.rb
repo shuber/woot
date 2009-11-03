@@ -59,8 +59,7 @@ class Woot
   
   def self.stream(twitter_username, twitter_password)
     TweetStream::Client.new(twitter_username, twitter_password).follow(*TWITTER_IDS.values) do |status|
-      subdomain = TWITTER_IDS.index(status.user.id)
-      subdomain = $1 if subdomain == WOOT_OFF && subdomain =~ /https?:\/\/([^\.]+)\.#{DOMAIN}/
+      subdomain = subdomain_from_twitter_status(status)
       yield scrape(subdomain) unless subdomain.nil?
     end
   end
@@ -68,4 +67,12 @@ class Woot
   def self.stop
     TweetStream::Client.stop
   end
+  
+  protected
+  
+    def self.subdomain_from_twitter_status(status)
+      subdomain = TWITTER_IDS.index(status.user.id)
+      subdomain = (status.text =~ /(\w+)\.#{DOMAIN}/ ? $1 : nil) if subdomain == WOOT_OFF
+      subdomain
+    end
 end

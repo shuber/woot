@@ -33,6 +33,21 @@ class Test::Unit::TestCase
   
 end
 
+class MockTwitterStatus
+  
+  attr_reader :id, :text
+  
+  def initialize(id, text = '')
+    @id = id
+    @text = text
+  end
+  
+  def user
+    self
+  end
+  
+end
+
 WOOT_FIXTURE_VALUES = {
   'available' => {
     :subdomain       => 'available',
