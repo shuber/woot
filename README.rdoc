@@ -17,6 +17,8 @@ Defaults to www.
   
   woot = Woot.new(:shirt)
   puts woot.title
+  
+  puts woot.to_h[:title]
 
 You can also receive live Woot updates using Twitter's Streaming API (See http://apiwiki.twitter.com/Streaming-API-Documentation).
 Simply call <tt>Woot.stream</tt> with your Twitter username, password, and a block.
