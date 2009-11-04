@@ -32,6 +32,10 @@ class Woot
     @html ||= Net::HTTP.get(URI.parse(scrape_url))
   end
   
+  def to_h
+    @to_h ||= self.class.attributes.inject({}) { |hash, attribute| hash.merge! attribute => send(attribute) }
+  end
+  
   def self.attribute(name, selector, result = nil, &block)
     attributes << name unless attributes.include?(name)
     instance_variable_name = "@#{name}"
@@ -42,7 +46,7 @@ class Woot
   end
   
   def self.attributes
-    @attributes ||= []
+    @attributes ||= [:subdomain]
   end
   
   def self.stream(twitter_username, twitter_password)

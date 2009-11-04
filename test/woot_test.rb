@@ -53,4 +53,9 @@ class WootTest < Test::Unit::TestCase
     end
   end
   
+  should 'return a hash of attributes when calling to_h' do
+    assert self.class.woots['www'].to_h.is_a?(Hash)
+    assert_equal Woot.attributes.map { |a| a.to_s }.sort, self.class.woots['www'].to_h.keys.map { |a| a.to_s }.sort
+  end
+  
 end
