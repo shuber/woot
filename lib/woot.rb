@@ -80,7 +80,7 @@ class Woot
     end
     
     def scrape_url
-      subdomain.to_s == 'sellout' ? Nokogiri::HTML(Net::HTTP.get(SELLOUT_DOMAIN, '/')).css('div.bd div.img a').first.attributes['href'].to_s.gsub('&amp;', '&') : "http://#{subdomain}.#{DOMAIN}/"
+      subdomain.to_s == 'sellout' ? Nokogiri::HTML(Net::HTTP.get(SELLOUT_DOMAIN, '/')).css('div.bd div.img a').first.attributes['href'] : "http://#{subdomain}.#{DOMAIN}/"
     end
     
     def self.subdomain_from_twitter_status(status)
