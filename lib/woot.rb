@@ -80,7 +80,7 @@ class Woot
     end
     
     def scrape_url
-      subdomain.to_s == 'sellout' ? Nokogiri::HTML(Net::HTTP.get(SELLOUT_DOMAIN, '/')).css('div.bd div.img a').first.attributes['href'] : "http://#{subdomain}.#{DOMAIN}/"
+      subdomain.to_s == 'sellout' ? Nokogiri::HTML(Net::HTTP.get(SELLOUT_DOMAIN, '/')).css('.bd .img a').first.attributes['href'] : "http://#{subdomain}.#{DOMAIN}/"
     end
     
     def self.subdomain_from_twitter_status(status)
@@ -93,21 +93,21 @@ end
 
 class Woot
   
-  attribute :alternate_image, 'div.hproduct a', proc { |element| $1 if element.attributes['href'].to_s =~ /\('([^']+)'\);/ }
-  attribute :comments_count, 'li.comments a', proc { |element| element.content.gsub(/\D/, '') }
-  attribute :comments_url, 'li.comments a', 'href'
-  attribute :currency, 'abbr.currency', 'title'
-  attribute :currency_symbol, 'abbr.currency', :content
-  attribute :details, 'div.productDescription dl', :content
-  attribute :header, 'div.story h2', :content
-  attribute :image, 'img.photo', 'src'
-  attribute :price, 'span.amount', :content
-  attribute :purchase_url, 'a#ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_SaleControl_HyperLinkWantOne', proc { |element| "http://#{subdomain}.#{DOMAIN}#{element.attributes['href'].to_s.gsub(/^https?:\/\/[^\/]+/, '')}" if element.attributes.has_key?('href') }
-  attribute :shipping, 'ul#shippingOptions', :content
-  attribute :specs, 'div.specs', :content
-  attribute :subheader, 'div.story h3', :content
-  attribute :title, 'h2.fn', :content
-  attribute :url, 'a.url', 'href'
-  attribute :writeup, 'div.writeUp', :content
+  attribute :alternate_image, '.hproduct a', proc { |element| $1 if element.attributes['href'].to_s =~ /\('([^']+)'\);/ }
+  attribute :comments_count, '.comments a', proc { |element| element.content.gsub(/\D/, '') }
+  attribute :comments_url, '.comments a', 'href'
+  attribute :currency, '.currency', 'title'
+  attribute :currency_symbol, '.currency', :content
+  attribute :details, '.productDescription dl', :content
+  attribute :header, '.story h2', :content
+  attribute :image, '.photo', 'src'
+  attribute :price, '.amount', :content
+  attribute :purchase_url, '#ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_SaleControl_HyperLinkWantOne', proc { |element| "http://#{subdomain}.#{DOMAIN}#{element.attributes['href'].to_s.gsub(/^https?:\/\/[^\/]+/, '')}" if element.attributes.has_key?('href') }
+  attribute :shipping, '#shippingOptions', :content
+  attribute :specs, '.specs', :content
+  attribute :subheader, '.story h3', :content
+  attribute :title, '.fn', :content
+  attribute :url, '.url', 'href'
+  attribute :writeup, '.writeUp', :content
   
 end
