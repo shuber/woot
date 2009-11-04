@@ -8,14 +8,14 @@ Scrapes woot.com sites
 
 == Usage
 
-Simply call <tt>Woot.scrape</tt> and optionally specify the woot subdomain (e.g. www, shirt, kids, wine, etc).
-Defaults to www. Returns a Struct object.
+Simply call <tt>Woot.new</tt> and optionally specify the woot subdomain (e.g. www, shirt, kids, wine, etc).
+Defaults to www.
 
-  woot = Woot.scrape
+  woot = Woot.new
   puts woot.title
   puts woot.price
   
-  woot = Woot.scrape(:shirt)
+  woot = Woot.new(:shirt)
   puts woot.title
 
 You can also receive live Woot updates using Twitter's Streaming API (See http://apiwiki.twitter.com/Streaming-API-Documentation).
