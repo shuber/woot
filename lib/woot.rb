@@ -1,9 +1,10 @@
-require 'scrapi'
+require 'rubygems'
+require 'nokogiri'
 require 'tweetstream'
-
-Tidy.path = ENV['TIDY_PATH'] if ENV['TIDY_PATH']
+require 'net/http'
 
 class Woot
+  
   DOMAIN = 'woot.com'
   SELLOUT_DOMAIN = 'shopping.yahoo.com'
   WOOT_OFF = 'woot-off'
@@ -17,51 +18,37 @@ class Woot
   }
   SUBDOMAINS = TWITTER_IDS.keys - [WOOT_OFF]
   
-  def self.scrape(subdomain = :www)
-    url = "http://#{subdomain}.#{DOMAIN}/"
-    if subdomain.to_s == 'sellout'
-      url = Scraper.define do
-        process_first "div.bd>div.img>a", :url => '@href'
-        result :url
-      end.scrape(Net::HTTP.get(SELLOUT_DOMAIN, '/')).gsub('&amp;', '&')
-    end
-    response = Net::HTTP.get(URI.parse(url))
-    
-    selectors = self.selectors(subdomain)
-    Scraper.define do
-      result *(selectors.inject([]) do |array, (pattern, results)|
-        process_first pattern, results
-        array += results.keys
-      end)
-    end.scrape(response)
+  attr_reader :subdomain
+  
+  def initialize(subdomain = 'www')
+    @subdomain = subdomain.to_s
   end
   
-  def self.selectors(subdomain = :www)
-    @selectors = {
-      '*'                         => { :subdomain => proc { |element| subdomain.to_s } },
-      'h2.fn'                     => { :title => :text },
-      'span.amount'               => { :price => :text },
-      'abbr.currency'             => { :currency => '@title', :currency_symbol => :text },
-      'ul#shippingOptions'        => { :shipping => :text },
-      'img.photo'                 => { :image => '@src' },
-      'div.hproduct>a'            => { :alternate_image => proc { |element| $1 if element.attributes['href'] =~ /\('([^']+)'\);/ } },
-      'a.url'                     => { :url => '@href' },
-      'li.comments>a'             => { :comments_url => '@href', :comments_count => proc { |element| element.children[0].content.gsub(/\D/, '') } },
-      'div.story>h2'              => { :header => :text },
-      'div.story>h3'              => { :subheader => :text },
-      'div.writeUp'               => { :writeup => :text },
-      'div.specs'                 => { :specs => :text },
-      'div.productDescription>dl' => { :details => :text },
-      'a#ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_SaleControl_HyperLinkWantOne' => { :purchase_url => proc do |element|
-        "http://#{subdomain}.#{DOMAIN}#{element.attributes['href'].gsub(/^https?:\/\/[^\/]+/, '')}" if element.attributes.has_key?('href')
-       end }
-    }
+  def document
+    @document ||= Nokogiri::HTML(html)
+  end
+  
+  def html
+    @html ||= Net::HTTP.get(URI.parse(scrape_url))
+  end
+  
+  def self.attribute(name, selector, result = nil, &block)
+    attributes << name unless attributes.include?(name)
+    instance_variable_name = "@#{name}"
+    define_method name do
+      instance_variable_set(instance_variable_name, parse(selector, block_given? ? block : result)) unless instance_variable_defined?(instance_variable_name)
+      instance_variable_get(instance_variable_name)
+    end
+  end
+  
+  def self.attributes
+    @attributes ||= []
   end
   
   def self.stream(twitter_username, twitter_password)
     TweetStream::Client.new(twitter_username, twitter_password).follow(*TWITTER_IDS.values) do |status|
       subdomain = subdomain_from_twitter_status(status)
-      yield scrape(subdomain) unless subdomain.nil?
+      yield new(subdomain) unless subdomain.nil?
     end
   end
   
@@ -71,9 +58,52 @@ class Woot
   
   protected
   
+    def evaluate_result(result, element)
+      case result
+        when Symbol
+          element.send(result).to_s.strip
+        when Proc
+          result.bind(self).call(element)
+        when String
+          element.attributes[result].to_s.strip
+        else
+          result
+        end
+    end
+    
+    def parse(selector, result)
+      evaluate_result result, document.css(selector).first
+    end
+    
+    def scrape_url
+      subdomain.to_s == 'sellout' ? Nokogiri::HTML(Net::HTTP.get(SELLOUT_DOMAIN, '/')).css('div.bd div.img a').first.attributes['href'].to_s.gsub('&amp;', '&') : "http://#{subdomain}.#{DOMAIN}/"
+    end
+    
     def self.subdomain_from_twitter_status(status)
       subdomain = TWITTER_IDS.index(status.user.id)
       subdomain = (status.text =~ /(\w+)\.#{DOMAIN}/ ? $1 : nil) if subdomain == WOOT_OFF
       subdomain
     end
+    
+end
+
+class Woot
+  
+  attribute :alternate_image, 'div.hproduct a', proc { |element| $1 if element.attributes['href'].to_s =~ /\('([^']+)'\);/ }
+  attribute :comments_count, 'li.comments a', proc { |element| element.content.gsub(/\D/, '') }
+  attribute :comments_url, 'li.comments a', 'href'
+  attribute :currency, 'abbr.currency', 'title'
+  attribute :currency_symbol, 'abbr.currency', :content
+  attribute :details, 'div.productDescription dl', :content
+  attribute :header, 'div.story h2', :content
+  attribute :image, 'img.photo', 'src'
+  attribute :price, 'span.amount', :content
+  attribute :purchase_url, 'a#ctl00_ctl00_ContentPlaceHolderLeadIn_ContentPlaceHolderLeadIn_SaleControl_HyperLinkWantOne', proc { |element| "http://#{subdomain}.#{DOMAIN}#{element.attributes['href'].to_s.gsub(/^https?:\/\/[^\/]+/, '')}" if element.attributes.has_key?('href') }
+  attribute :shipping, 'ul#shippingOptions', :content
+  attribute :specs, 'div.specs', :content
+  attribute :subheader, 'div.story h3', :content
+  attribute :title, 'h2.fn', :content
+  attribute :url, 'a.url', 'href'
+  attribute :writeup, 'div.writeUp', :content
+  
 end
