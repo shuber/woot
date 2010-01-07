@@ -4,7 +4,7 @@ Scrapes woot.com sites
 
 == Installation
 
-  gem install woot --source http://gemcutter.org
+  gem install woot
 
 == Usage
 
